@@ -25,11 +25,23 @@
     color:green
 }
 .p{
-    font-size: 35px;
+    font-size: 40px;
 }
 .amount{
-    display: flex;
+    display: inline-block;
     justify-content: space-evenly;
-    background-color: black;
-    color: white;
+    /* background-color: rgb(156, 152, 152); */
+    width: 100%;
+    color: black;
+    margin: auto;
+    
 }
+.h{
+    font-size: 15px;
+}
+.u{
+    font-size: 20px;
+}
+/* .o{
+    font-size: 30px;
+} */

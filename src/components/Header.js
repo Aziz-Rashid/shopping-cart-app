@@ -8,15 +8,18 @@ import './shopitemslist.css'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { CartContext } from '../context/Global'
+import Countup from 'react-countup'
 
 const useStyles = makeStyles((theme) => ({
   
   root: {
     flexGrow: 1,
     
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    
   },
   title: {
     flexGrow: 1,
@@ -77,29 +80,16 @@ export default function Header() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-          <ShoppingCartIcon className="p"/>Shopping Cart
-          </Typography>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Link className="a" to='/'>Home</Link>
-            <Link className="a" to='/cart'>Cart</Link><AddShoppingCartIcon />
-            
+          <ShoppingCartIcon /><span className="p">𝔰𝔥𝔬𝔭𝔭𝔦𝔫𝔤 𝔠𝔞𝔯𝔱</span>
           </Typography>
           
-          <h1>Total Amount: ${totalamount}</h1>
-          {/* <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div> */}
-            {/* <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            /> */}
-          {/* </div> */}
-        
+          <Typography className={classes.title} variant="h6" noWrap>
+            
+          </Typography>
+          <h1 className="h">Total Amount: <span className="u">$<Countup start={0} end={totalamount} duration={2.75} /></span></h1>
+          
+          <Link className="a" to='/'>Home</Link>
+            <Link className="a" to='/cart'>Cart</Link><AddShoppingCartIcon />
         </Toolbar>
       </AppBar>
     </div>

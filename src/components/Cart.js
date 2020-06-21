@@ -13,6 +13,8 @@ import Divider from '@material-ui/core/Divider';
 import { CartContext } from '../context/Global'
 import './shopitemslist.css'
 import Icon from '@material-ui/core/Icon';
+import Countup from 'react-countup'
+import FlipMove from 'react-flip-move'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,15 +62,17 @@ export default function Cart() {
         setcart(newcart)
    }
     return (
+        
         <div className={classes.root}>
             <div className="amount">
                 <div>
-                    <h1>Items in Cart = {cart.length}</h1>
+                    <h1 className="o">Items in Cart = {cart.length}</h1>
                 </div>
                 <div>
-                    <h1>Total Amount = {totalamount}</h1>
+                    <h1 className="o">Total Amount = <Countup start={0} end={totalamount} duration={2.75} /></h1>
                 </div>
             </div>
+            <FlipMove duration={1200} easing="ease-in-out">
             {cart.map((item, id) => (
                 <ExpansionPanel defaultExpanded key={id}>
                     <ExpansionPanelSummary
@@ -114,7 +118,10 @@ export default function Cart() {
                          </Button>
                     </ExpansionPanelActions>
                 </ExpansionPanel>
+
             ))}
+            </FlipMove>
         </div>
+        
     );
 }

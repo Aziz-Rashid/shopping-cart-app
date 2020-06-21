@@ -7,7 +7,7 @@ import Cart from './components/Cart'
 import {CartProvider} from './context/Global'
 function App() {
   return (
-    <div className="App">
+    <div>
       <CartProvider>
         <BrowserRouter>
           <Header />
