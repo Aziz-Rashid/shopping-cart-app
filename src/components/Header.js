@@ -14,8 +14,6 @@ const useStyles = makeStyles((theme) => ({
   
   root: {
     flexGrow: 1,
-    
-    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -77,7 +75,7 @@ export default function Header() {
   
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
           <ShoppingCartIcon /><span className="p">𝔰𝔥𝔬𝔭𝔭𝔦𝔫𝔤 𝔠𝔞𝔯𝔱</span>
