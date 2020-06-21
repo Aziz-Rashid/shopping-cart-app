@@ -36,4 +36,4 @@ jobs:
     - name: install surge
       run: npm install --global surge
     - name: deploying app on surge 
-      run: surge ./build shoppingcart.surge.sh --token ${{secrets.TOKEN}}
+      run: surge ./build shoppingcart-app.surge.sh --token ${{secrets.TOKEN}}
