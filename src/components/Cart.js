@@ -64,7 +64,7 @@ export default function Cart() {
     return (
         
         <div className={classes.root}>
-            <div className="amount">
+            <div className="amount j">
                 <div>
                     <h1 className="o">Items in Cart = {cart.length}</h1>
                 </div>
