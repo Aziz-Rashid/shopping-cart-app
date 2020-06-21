@@ -1,0 +1,35 @@
+.flex{
+    display: inline-block;
+    /* margin: auto; */
+    margin-right: 70px;
+    margin-top: 20px;
+    /* width: 50%; */
+    
+}
+
+.doller{
+    font-size: 20px;
+    margin-left: 15px;
+}
+.a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.a:hover{
+    color: red
+}
+.a:active{
+    color:green
+}
+.p{
+    font-size: 35px;
+}
+.amount{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+}
