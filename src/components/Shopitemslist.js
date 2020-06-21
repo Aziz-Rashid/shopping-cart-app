@@ -45,13 +45,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: red[500],
   },
 }));
-export default function Shopitemslist({ text, img, amount, para, deff, id }) {
+export default function Shopitemslist({ text, img, amount, para, deff, id,item }) {
   const [cart,setcart] = useContext(CartContext)
   const [color, setcolor] = useState({ color: '' })
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [islike, setlike] = useState(true)
-  
+  const [count,setcount] = React.useState([item])
   const handlechange = () => {
     setlike(!true)
     if (islike === true) {
@@ -77,7 +77,15 @@ export default function Shopitemslist({ text, img, amount, para, deff, id }) {
       def: para,
       key: id
     }
-    setcart(state => [...state,list])
+    setcount(()=> {
+      if(count > 0){
+        setcart(state => [...state,list])
+        return count - 1
+        }else{
+          return " empty"
+        }
+    })
+
   }
   return (
     <div className="flex">
@@ -106,6 +114,10 @@ export default function Shopitemslist({ text, img, amount, para, deff, id }) {
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
             {para}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p" >
+       <span className="r"> Items in shop = {item} <br />
+        Remaining Items is ={count}</span>
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -136,10 +148,9 @@ export default function Shopitemslist({ text, img, amount, para, deff, id }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Method:</Typography>
+            <Typography paragraph>Item available in shop:</Typography>
             <Typography paragraph>
-              Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-              minutes.
+            {count}
           </Typography>
             <Typography paragraph>
               {deff}

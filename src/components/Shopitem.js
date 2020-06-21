@@ -5,7 +5,7 @@ export default function Shopitem() {
     const {shopingcart} = useContext(GlobalContext)
     return (
         <div>
-            {shopingcart.map((item)=>(<Shopitemslist text={item.text} key={item.id} img={item.image} amount={item.amount} para={item.para} deff={item.deff} id={item.id}/> ))}
+            {shopingcart.map((item)=>(<Shopitemslist item={item.items} text={item.text} key={item.id} img={item.image} amount={item.amount} para={item.para} deff={item.deff} id={item.id}/> ))}
         </div>
     )
 }
