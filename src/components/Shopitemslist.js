@@ -51,6 +51,7 @@ export default function Shopitemslist({ text, img, amount, para, deff, id }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [islike, setlike] = useState(true)
+  
   const handlechange = () => {
     setlike(!true)
     if (islike === true) {
@@ -70,6 +71,7 @@ export default function Shopitemslist({ text, img, amount, para, deff, id }) {
   
   const clicks = () =>{
     const list = {
+      news: cart,
       text: text,
       price: amount,
       def: para,

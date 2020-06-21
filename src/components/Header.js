@@ -68,8 +68,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-  const [cart, setcart] = useContext(CartContext)
+  const [cart] = useContext(CartContext)
     const totalamount = cart.reduce((acc, curr) => acc + curr.price, 0)
+    // var ab = setcart(() => console.log('hello world'))
   
   return (
     <div className={classes.root}>
