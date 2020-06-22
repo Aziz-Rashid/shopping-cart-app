@@ -50,5 +50,15 @@
     color: black;
 }
 .j{
-    margin-top: 60px;
+    margin-top: 80px;
+}
+.e{
+    width: 50%;
+    height: 40px;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    padding-left: 30px;
+    font-size: 20px;
 }
