@@ -61,4 +61,11 @@
     border-bottom: 2px solid black;
     padding-left: 30px;
     font-size: 20px;
+    position: static;
+}
+.o{
+    /* border: 2px solid black; */
+    margin-bottom: 20px;
+    opacity: 0.4;
+    background-color: gray;
 }
