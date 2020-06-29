@@ -1,11 +1,41 @@
-.flex{
+/* .flex{
     display: inline-block;
-    /* margin: auto; */
     margin-right: 70px;
     margin-top: 20px;
-    /* width: 50%; */
     
-}
+} */
+@media (min-width: 1025px) and (max-width: 1600px) {
+    .flex{
+        display: inline-block;
+        width: 30%;
+        margin: 30px auto;
+    }
+    
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .flex{
+        display: inline-block;
+        width: 35%;
+        margin: 30px 30px;
+    }
+    
+  }
+  @media (min-width: 400px) and (max-width: 767px) {
+    .flex{
+        display: block;
+        width: 75%;
+        margin: 30px auto;
+    }
+    
+  }
+  @media (min-width: 200px) and (max-width: 400px) {
+    .flex{
+        display: block;
+        width: 85%;
+        margin: 30px auto;
+    }
+    
+  }
 
 .doller{
     font-size: 20px;
@@ -68,4 +98,8 @@
     margin-bottom: 20px;
     opacity: 0.4;
     background-color: gray;
+}
+.paragraph{
+    text-align: justify;
+    opacity: 0.7;
 }

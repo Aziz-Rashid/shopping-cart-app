@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  // paper:{
+  //   display: 'flex',
+  //   justifyContent: 'space-around'
+  // }
 }));
 export default function Shopitemslist({ text, img, amount, para, deff, id,item }) {
   const [cart,setcart] = useContext(CartContext)
@@ -88,7 +92,8 @@ export default function Shopitemslist({ text, img, amount, para, deff, id,item }
 
   }
   return (
-    <div className="flex">
+    // <div className={classes.paper}>
+     <div className="flex"> 
       <Card className={classes.root}>
         <CardHeader
           avatar={
@@ -105,16 +110,18 @@ export default function Shopitemslist({ text, img, amount, para, deff, id,item }
           subheader={date.toLocaleDateString()}
         />
         <CardMedia
-          style={{ backgroundSize: "cover", width: "100%", height: "auto" }}
+          style={{ backgroundSize: "100% 100%", width: "100%", height: "auto" }}
           className={classes.media}
           image={img}
           title={text}
 
         />
         <CardContent>
+        <div className="paragraph"> 
           <Typography variant="body2" color="textSecondary" component="p">
             {para}
           </Typography>
+          </div>
           <Typography variant="body2" color="textSecondary" component="p" >
        <span className="r"> Items in shop = {item} <br />
         Remaining Items is ={count}</span>
@@ -152,12 +159,15 @@ export default function Shopitemslist({ text, img, amount, para, deff, id,item }
             <Typography paragraph>
             {count}
           </Typography>
+          <div className="paragraph"> 
             <Typography paragraph>
-              {deff}
+           {deff}
             </Typography>
+            </div>
           </CardContent>
         </Collapse>
       </Card>
     </div>
+    // </div>
   );
 }

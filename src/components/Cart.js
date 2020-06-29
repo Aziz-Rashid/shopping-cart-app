@@ -55,14 +55,13 @@ export default function Cart() {
     const classes = useStyles();
     const [cart, setcart] = useContext(CartContext)
     const totalamount = cart.reduce((acc, curr) => acc + curr.price, 0)
-   const handlers = (id) =>{
-    
-        var newcart = [...cart] 
-        newcart.splice(id,1)
+    const handlers = (id) => {
+        var newcart = [...cart]
+        newcart.splice(id, 1)
         setcart(newcart)
-   }
+    }
     return (
-        
+
         <div className={classes.root}>
             <div className="amount j">
                 <div>
@@ -73,55 +72,55 @@ export default function Cart() {
                 </div>
             </div>
             <FlipMove duration={1200} easing="ease-in-out">
-            {cart.map((item, id) => (
-                <ExpansionPanel defaultExpanded key={id}>
-                    <ExpansionPanelSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1c-content"
-                        id="panel1c-header"
+                {cart.map((item, id) => (
+                    <ExpansionPanel defaultExpanded key={id}>
+                        <ExpansionPanelSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1c-content"
+                            id="panel1c-header"
                         >
-                        <div className={classes.column}>
-                            <Typography className={classes.heading}>Cart Items List</Typography>
-                        </div>
-                        <div className={classes.column}>
-                            <Typography className={classes.secondaryHeading}>{item.text}</Typography>
-                        </div>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails className={classes.details}>
-                        <div className={classes.column} />
-                        <div className={classes.column}>
-                            <Chip label={item.text} onDelete={handlers} />
-                        </div>
-                        <div className={clsx(classes.column, classes.helper)}>
-                            <Typography variant="caption">
-                                {item.def}
-                                <br />
-                                <a href="#secondary-heading-and-columns" className={classes.link}>
-                                    Read more
+                            <div className={classes.column}>
+                                <Typography className={classes.heading}>Cart Items List</Typography>
+                            </div>
+                            <div className={classes.column}>
+                                <Typography className={classes.secondaryHeading}>{item.text}</Typography>
+                            </div>
+                        </ExpansionPanelSummary>
+                        <ExpansionPanelDetails className={classes.details}>
+                            <div className={classes.column} />
+                            <div className={classes.column}>
+                                <Chip label={item.text} onDelete={handlers} />
+                            </div>
+                            <div className={clsx(classes.column, classes.helper)}>
+                                <Typography variant="caption">
+                                    {item.def}
+                                    <br />
+                                    <a href="#secondary-heading-and-columns" className={classes.link}>
+                                        Read more
               </a>
-                            </Typography>
-                        </div>
-                    </ExpansionPanelDetails>
-                    <Divider />
-                    <ExpansionPanelActions>
-                        {/* <Button size="small" color="primary" onClick={handlers}>
+                                </Typography>
+                            </div>
+                        </ExpansionPanelDetails>
+                        <Divider />
+                        <ExpansionPanelActions>
+                            {/* <Button size="small" color="primary" onClick={handlers}>
                             Delete
                      </Button> */}
-                     <Button
-                        onClick={handlers}
-                        variant="contained"
-                        color="primary"
-                        className={classes.button}
-                        endIcon={<Icon>delete</Icon>}
-                    >
-                         Delete
+                            <Button
+                                onClick={handlers}
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                endIcon={<Icon>delete</Icon>}
+                            >
+                                Delete
                          </Button>
-                    </ExpansionPanelActions>
-                </ExpansionPanel>
+                        </ExpansionPanelActions>
+                    </ExpansionPanel>
 
-            ))}
+                ))}
             </FlipMove>
         </div>
-        
+
     );
 }
