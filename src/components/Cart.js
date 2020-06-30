@@ -212,7 +212,7 @@ export default function SimplePaper() {
                                 aria-labelledby="responsive-dialog-title"
                             >
                                 <DialogTitle id="responsive-dialog-title">{`Are you sure you want to buy ${item.text} cool shirt?`}</DialogTitle>
-                                <img src={item.image} alt="" />
+                                <img src={item.image} alt="" height="200px"/>
                                 <h1>${item.price}</h1>
                                 <DialogContent>
                                     <DialogContentText>
