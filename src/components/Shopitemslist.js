@@ -79,7 +79,9 @@ export default function Shopitemslist({ text, img, amount, para, deff, id,item }
       text: text,
       price: amount,
       def: para,
-      key: id
+      key: id,
+      image: img,
+      a: deff
     }
     setcount(()=> {
       if(count > 0){
